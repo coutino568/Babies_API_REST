@@ -3,7 +3,8 @@ from rest_framework import viewsets
 from .serializers import EventSerializer, EventByIdSerializer
 from Events.models import Event
 from django.core import serializers
-
+from rest_framework.response import Response
+from rest_framework.request import Request
 # Create your views here.
 
 class EventViewSet(viewsets.ModelViewSet):

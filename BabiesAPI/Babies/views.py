@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from .serializers import BabySerializer, BabyByIdSerializer
-
+from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework.request import Request
 # Create your views here.
 from Babies.models import Baby
 from Babies.serializers import BabySerializer
 
 
-class BabiesViewSet(viewsets.ModelViewSet):
+class BabyViewSet(viewsets.ModelViewSet):
 	queryset= Baby.objects.all()
 	serializer_class = BabySerializer
 

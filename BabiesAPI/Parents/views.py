@@ -2,13 +2,14 @@ from django.shortcuts import render
 from django.core import serializers
 from rest_framework import viewsets
 from .serializers import ParentSerializer, ParentByIdSerializer
-
+from rest_framework.response import Response
+from rest_framework.request import Request
 from Parents.models import Parent
 # Create your views here.
 
-class EventViewSet(viewsets.ModelViewSet):
-	queryset= Event.objects.all()
-	serializer_class = EventSerializer
+class ParentViewSet(viewsets.ModelViewSet):
+	queryset= Parent.objects.all()
+	serializer_class = ParentSerializer
 
 	def list (self, request):
 		parents= Parent.objects.all()
